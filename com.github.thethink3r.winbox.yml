@@ -44,7 +44,8 @@ modules:
       - install -D winbox.sh /app/bin/winbox
       - install -D wine-breeze-dark.reg /app/wine-breeze-dark.reg
       - install -D icon.png /app/exports/share/app-info/icons/flatpak/128x128/com.github.thethink3r.winbox.png
-      - install -D icon.svg /app/share/icons/hicolor/scalable/mimetypes/com.github.thethink3r.winbox.svg
+      # is not a valid icon: Format not recognized ?
+      #- install -D icon.svg /app/share/icons/hicolor/scalable/mimetypes/com.github.thethink3r.winbox.svg
       - install -D com.github.thethink3r.winbox.desktop /app/share/applications/com.github.thethink3r.winbox.desktop
 
 cleanup:
