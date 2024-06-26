@@ -16,6 +16,23 @@ apt install flatpak-builder
 flatpak install org.freedesktop.Sdk
 ```
 
+# Install via Docker
+
+```bash
+docker run --network host --privileged --volume "${PWD}":/tmp/sdk/ --name flatpak -it alpine /bin/sh -c 'cd /tmp/sdk/; ./build_docker.sh'
+
+flatpak install --user org.winehq.Wine/x86_64/stable-22.08
+flatpak install --user org.freedesktop.Platform/x86_64/22.08
+flatpak install --user runtime/org.freedesktop.Sdk/x86_64/22.08
+
+# install from local file
+flatpak install --user winbox.flatpak
+
+# cleanup (because of root:root ownership)
+docker run --network host --privileged --volume "${PWD}":/tmp/sdk/ --name flatpak -it alpine /bin/sh -c 'cd /tmp/sdk/; rm winbox.flatpak'
+```
+
+
 # Install via winbox.flatpak
 
 
