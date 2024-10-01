@@ -4,9 +4,9 @@
 
 app-id: com.github.thethink3r.winbox
 base: org.winehq.Wine
-base-version: stable-22.08
+base-version: stable-24.08
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 finish-args:
   - --share=ipc
@@ -27,7 +27,7 @@ command: winbox
 add-extensions:
   org.freedesktop.Platform.Compat.i386:
     directory: lib/i386-linux-gnu
-    version: '22.08'
+    version: '24.08'
 
   org.winehq.Wine.mono:
     directory: share/wine/mono
@@ -43,7 +43,7 @@ modules:
     build-commands:
       - install -D winbox.sh /app/bin/winbox
       - install -D wine-breeze-dark.reg /app/wine-breeze-dark.reg
-      - install -D icon.png /app/exports/share/app-info/icons/flatpak/128x128/com.github.thethink3r.winbox.png
+      - install -D icon.png /app/share/icons/hicolor/128x128/apps/com.github.thethink3r.winbox.png
       # is not a valid icon: Format not recognized ?
       #- install -D icon.svg /app/share/icons/hicolor/scalable/mimetypes/com.github.thethink3r.winbox.svg
       - install -D com.github.thethink3r.winbox.desktop /app/share/applications/com.github.thethink3r.winbox.desktop
